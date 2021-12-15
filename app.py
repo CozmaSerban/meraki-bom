@@ -404,4 +404,4 @@ def generate_bom(data):
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port=443)
