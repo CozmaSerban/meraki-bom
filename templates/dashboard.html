@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+  <title>Meraki BoM Generator</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/offcanvas/">
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="https://getbootstrap.com/docs/4.0/examples/offcanvas/offcanvas.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+  <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Meraki BoM Generator</a>
+    <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+  </nav>
+
+  <main role="main" class="container">
+    <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-white rounded box-shadow">
+      <img class="mr-3"
+        src="data:image/png;base64,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"
+        alt="" width="48" height="48">
+      <div class="lh-100">
+        <h6 class="mb-0 text-dark lh-100">Chestionar pentru clienti Meraki</h6>
+      </div>
+    </div>
+
+    <div class="my-3 p-3 bg-white rounded box-shadow">
+      <h6 class="border-bottom border-gray pb-2 mb-0">Informatii generale</h6>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Cate locatii HQ si cate locatii tip branch aveti ?
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Numar locatii HQ</label>
+          <input type="text" class="form-control" id="HQ_locations" placeholder="Enter number">
+          <label for="forBranch">Numar locatii Branch</label>
+          <input type="text" class="form-control" id="Branch_locations" placeholder="Enter number">
+        </div>
+      </div>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Viteza garantata Internet HQ ?
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Viteza in Mbps:</label>
+          <input type="text" class="form-control" id="tput_hq" placeholder="Enter number">
+        </div>
+      </div>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Viteza garantata Locatii secundare ?
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Viteza in Mbps:</label>
+          <input type="text" class="form-control" id="tput_br" placeholder="Enter number">
+
+        </div>
+      </div>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Locatii 4G secundare ?
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Numar locatii:</label>
+          <input type="text" class="form-control" id="4g_locations" placeholder="Enter number">
+
+        </div>
+      </div>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Redundanta internet HQ ?
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Da/Nu:</label>
+          <select class="form-control" id="bck_hq">
+            <option>Da</option>
+            <option>Nu</option>
+          </select>
+
+        </div>
+      </div>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Redundanta internet Branch-uri ?
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Da/Nu:</label>
+          <select class="form-control" id="bck_br">
+            <option>Da</option>
+            <option>Nu</option>
+          </select>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="my-3 p-3 bg-white rounded box-shadow">
+      <h6 class="border-bottom border-gray pb-2 mb-0">Informatii specifice HQ</h6>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Arie totala acoperire WIFI (1ap 100m2)
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Suprafata in mp:</label>
+          <input type="text" class="form-control" id="hq_ap" placeholder="Enter number">
+
+        </div>
+      </div>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Numar telefoane fixe IP ?
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+
+          <input type="text" class="form-control" id="hq_phone" placeholder="Enter number">
+
+        </div>
+      </div>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Numar Porturi LAN(PC-uri/Laptopuri/ Periferice/ camere IP conectate) ?
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+
+          <input type="text" class="form-control" id="hq_ports" placeholder="Enter number">
+
+        </div>
+      </div>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Conexiuni cloud Azure
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Da/Nu:</label>
+          <select class="form-control" id="hq_azure">
+            <option>Da</option>
+            <option>Nu</option>
+          </select>
+
+        </div>
+      </div>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Numar camere supraveghere IP:
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Interior</label>
+          <input type="text" class="form-control" id="hq_cam_int" placeholder="Enter number">
+          <label for="forBranch">Exterior</label>
+          <input type="text" class="form-control" id="hq_cam_ext" placeholder="Enter number">
+        </div>
+      </div>
+
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Numar senzori
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Umiditate</label>
+          <input type="text" class="form-control" id="hq_senz_temp" placeholder="Enter number">
+          <label for="forBranch">Temperatura</label>
+          <input type="text" class="form-control" id="hq_senz_hum" placeholder="Enter number">
+        </div>
+      </div>
+
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Numar sali de conferinta ?
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Mari (mai mult de 10 persoane)</label>
+          <input type="text" class="form-control" id="hq_conf_big" placeholder="Enter number">
+          <label for="forBranch">Mici (mai putin de 10 persoane)</label>
+          <input type="text" class="form-control" id="hq_conf_small" placeholder="Enter number">
+        </div>
+      </div>
+
+    </div>
+    <div class="my-3 p-3 bg-white rounded box-shadow">
+      <h6 class="border-bottom border-gray pb-2 mb-0">Informatii specifice Branch-uri</h6>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Arie totala acoperire WIFI (1ap 100m2)
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Suprafata in mp:</label>
+          <input type="text" class="form-control" id="br_ap" placeholder="Enter number">
+
+        </div>
+      </div>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Numar telefoane fixe IP ?
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+
+          <input type="text" class="form-control" id="br_phone" placeholder="Enter number">
+
+        </div>
+      </div>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Numar Porturi LAN(PC-uri/Laptopuri/ Periferice/ camere IP conectate) ?
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+
+          <input type="text" class="form-control" id="br_ports" placeholder="Enter number">
+
+        </div>
+      </div>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Conexiuni cloud Azure
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Da/Nu:</label>
+          <select class="form-control" id="br_azure">
+            <option>Da</option>
+            <option>Nu</option>
+          </select>
+
+        </div>
+      </div>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Numar camere supraveghere IP:
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Interior</label>
+          <input type="text" class="form-control" id="br_cam_int" placeholder="Enter number">
+          <label for="forBranch">Exterior</label>
+          <input type="text" class="form-control" id="br_cam_ext" placeholder="Enter number">
+        </div>
+      </div>
+
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Numar senzori
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Umiditate</label>
+          <input type="text" class="form-control" id="br_senz_temp" placeholder="Enter number">
+          <label for="forBranch">Temperatura</label>
+          <input type="text" class="form-control" id="br_senz_hum" placeholder="Enter number">
+        </div>
+      </div>
+
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Numar sali de conferinta ?
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Mari (mai mult de 10 persoane)</label>
+          <input type="text" class="form-control" id="br_conf_big" placeholder="Enter number">
+          <label for="forBranch">Mici (mai putin de 10 persoane)</label>
+          <input type="text" class="form-control" id="br_conf_small" placeholder="Enter number">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="my-3 p-3 bg-white rounded box-shadow">
+      <h6 class="border-bottom border-gray pb-2 mb-0">Informatii specifice depozite</h6>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Arie totala acoperire WIFI interior (1ap 50m2)
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Suprafata in mp:</label>
+          <input type="text" class="form-control" id="dep_ap_int" placeholder="Enter number">
+
+        </div>
+      </div>
+
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Arie totala acoperire WIFI exterior (1ap 100m2)
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Suprafata in mp:</label>
+          <input type="text" class="form-control" id="dep_ap_ext" placeholder="Enter number">
+
+        </div>
+      </div>
+
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Numar telefoane fixe IP ?
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+
+          <input type="text" class="form-control" id="dep_phone" placeholder="Enter number">
+
+        </div>
+      </div>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Numar Porturi LAN(PC-uri/Laptopuri/ Periferice/ camere IP conectate) ?
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+
+          <input type="text" class="form-control" id="dep_ports" placeholder="Enter number">
+
+        </div>
+      </div>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Numar camere supraveghere IP:
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Interior</label>
+          <input type="text" class="form-control" id="dep_cam_int" placeholder="Enter number">
+          <label for="forBranch">Exterior</label>
+          <input type="text" class="form-control" id="dep_cam_ext" placeholder="Enter number">
+        </div>
+      </div>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Numar senzori:
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Umiditate</label>
+          <input type="text" class="form-control" id="dep_senz_hum" placeholder="Enter number">
+          <label for="forBranch">Temperatura</label>
+          <input type="text" class="form-control" id="dep_senz_temp" placeholder="Enter number">
+        </div>
+      </div>
+    </div>
+    <div class="media text-muted pt-3" style="margin-bottom:40px;">
+      <button type="button" class="btn btn-success" id="submit">Creeaza BoM</button>
+    </div>
+  </main>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+      $("#submit").click(function (e) {
+
+        e.preventDefault();
+        datum = {
+            "hq_locations": $('#HQ_locations').val(),
+            "br_locations": $('#Branch_locations').val(),
+            "tput_hq": $('#tput_hq').val(),
+            "tput_br": $('#tput_br').val(),
+            "4g_locations": $('#4g_locations').val(),
+            "bck_hq": $('#bck_hq').val(),
+            "bck_br": $('#bck_br').val(),
+
+            "hq_ap": $('#hq_ap').val(),
+            "hq_phone": $('#hq_phone').val(),
+            "hq_ports": $('#hq_ports').val(),
+            "hq_azure": $('#hq_azure').val(),
+            "hq_cam_int": $('#hq_cam_int').val(),
+            "hq_cam_ext": $('#hq_cam_ext').val(),
+            "hq_senz_temp": $('#hq_senz_temp').val(),
+            "hq_senz_hum": $('#hq_senz_hum').val(),
+            "hq_conf_big": $('#hq_conf_big').val(),
+            "hq_conf_small": $('#hq_conf_small').val(),
+
+            "br_ap": $('#br_ap').val(),
+            "br_phone": $('#br_phone').val(),
+            "br_ports": $('#br_ports').val(),
+            "br_azure": $('#br_azure').val(),
+            "br_cam_int": $('#br_cam_int').val(),
+            "br_cam_ext": $('#br_cam_ext').val(),
+            "br_senz_temp": $('#br_senz_temp').val(),
+            "br_senz_hum": $('#br_senz_hum').val(),
+            "br_conf_big": $('#br_conf_big').val(),
+            "br_conf_small": $('#br_conf_small').val(),
+
+            "dep_ap_int": $('#dep_ap_int').val(),
+            "dep_ap_ext": $('#dep_ap_ext').val(),
+            "dep_phone": $('#dep_phone').val(),
+            "dep_ports": $('#dep_ports').val(),
+            "dep_cam_int": $('#dep_cam_int').val(),
+            "dep_cam_ext": $('#dep_cam_ext').val(),
+            "dep_senz_hum": $('#dep_senz_hum').val(),
+            "dep_senz_temp": $('#dep_senz_temp').val(),
+          }
+          console.log(datum)
+        $.ajax({
+          type: "POST",
+          url: "/generate_bom",
+          data: datum,
+          success: function (result) {
+            alert('ok');
+            window.open("/bom", '_blank');
+          },
+          error: function (result) {
+            alert('error');
+          }
+        });
+      });
+    });
+  </script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
+  <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+  <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/holder.min.js"></script>
+  <script src="https://getbootstrap.com/docs/4.0/examples/offcanvas/offcanvas.js"></script>
+</body>
+
+</html>
