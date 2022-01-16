@@ -45,7 +45,7 @@
       <div class="media text-muted pt-3">
         <div class="row" style="margin-left:10px">
           <p class="media-body border-gray">
-            Cate locatii HQ si cate locatii tip branch aveti ?
+            Cate locatii HQ/Branch/Depozit aveti ?
           </p>
         </div>
         <div class="row" style="margin-left:35px">
@@ -53,8 +53,30 @@
           <input type="text" class="form-control" id="HQ_locations" placeholder="Enter number">
           <label for="forBranch">Numar locatii Branch</label>
           <input type="text" class="form-control" id="Branch_locations" placeholder="Enter number">
+          <label for="forBranch">Numar locatii depozite</label>
+          <input type="text" class="form-control" id="dep_locations" placeholder="Enter number">
         </div>
       </div>
+     
+    
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Locatii 4G secundare ?
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Numar locatii:</label>
+          <input type="text" class="form-control" id="4g_locations" placeholder="Enter number">
+
+        </div>
+      </div>
+      
+
+    </div>
+
+    <div class="my-3 p-3 bg-white rounded box-shadow">
+      <h6 class="border-bottom border-gray pb-2 mb-0">Informatii specifice HQ</h6>
       <div class="media text-muted pt-3">
         <div class="row" style="margin-left:10px">
           <p class="media-body border-gray">
@@ -69,65 +91,6 @@
       <div class="media text-muted pt-3">
         <div class="row" style="margin-left:10px">
           <p class="media-body border-gray">
-            Viteza garantata Locatii secundare ?
-          </p>
-        </div>
-        <div class="row" style="margin-left:35px">
-          <label for="forHQ">Viteza in Mbps:</label>
-          <input type="text" class="form-control" id="tput_br" placeholder="Enter number">
-
-        </div>
-      </div>
-      <div class="media text-muted pt-3">
-        <div class="row" style="margin-left:10px">
-          <p class="media-body border-gray">
-            Locatii 4G secundare ?
-          </p>
-        </div>
-        <div class="row" style="margin-left:35px">
-          <label for="forHQ">Numar locatii:</label>
-          <input type="text" class="form-control" id="4g_locations" placeholder="Enter number">
-
-        </div>
-      </div>
-      <div class="media text-muted pt-3">
-        <div class="row" style="margin-left:10px">
-          <p class="media-body border-gray">
-            Redundanta internet HQ ?
-          </p>
-        </div>
-        <div class="row" style="margin-left:35px">
-          <label for="forHQ">Da/Nu:</label>
-          <select class="form-control" id="bck_hq">
-            <option>Da</option>
-            <option>Nu</option>
-          </select>
-
-        </div>
-      </div>
-      <div class="media text-muted pt-3">
-        <div class="row" style="margin-left:10px">
-          <p class="media-body border-gray">
-            Redundanta internet Branch-uri ?
-          </p>
-        </div>
-        <div class="row" style="margin-left:35px">
-          <label for="forHQ">Da/Nu:</label>
-          <select class="form-control" id="bck_br">
-            <option>Da</option>
-            <option>Nu</option>
-          </select>
-
-        </div>
-      </div>
-
-    </div>
-
-    <div class="my-3 p-3 bg-white rounded box-shadow">
-      <h6 class="border-bottom border-gray pb-2 mb-0">Informatii specifice HQ</h6>
-      <div class="media text-muted pt-3">
-        <div class="row" style="margin-left:10px">
-          <p class="media-body border-gray">
             Arie totala acoperire WIFI (1ap 100m2)
           </p>
         </div>
@@ -137,18 +100,7 @@
 
         </div>
       </div>
-      <div class="media text-muted pt-3">
-        <div class="row" style="margin-left:10px">
-          <p class="media-body border-gray">
-            Numar telefoane fixe IP ?
-          </p>
-        </div>
-        <div class="row" style="margin-left:35px">
-
-          <input type="text" class="form-control" id="hq_phone" placeholder="Enter number">
-
-        </div>
-      </div>
+     
       <div class="media text-muted pt-3">
         <div class="row" style="margin-left:10px">
           <p class="media-body border-gray">
@@ -204,23 +156,23 @@
         </div>
       </div>
 
-      <div class="media text-muted pt-3">
-        <div class="row" style="margin-left:10px">
-          <p class="media-body border-gray">
-            Numar sali de conferinta ?
-          </p>
-        </div>
-        <div class="row" style="margin-left:35px">
-          <label for="forHQ">Mari (mai mult de 10 persoane)</label>
-          <input type="text" class="form-control" id="hq_conf_big" placeholder="Enter number">
-          <label for="forBranch">Mici (mai putin de 10 persoane)</label>
-          <input type="text" class="form-control" id="hq_conf_small" placeholder="Enter number">
-        </div>
-      </div>
+     
 
     </div>
     <div class="my-3 p-3 bg-white rounded box-shadow">
       <h6 class="border-bottom border-gray pb-2 mb-0">Informatii specifice Branch-uri</h6>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Viteza garantata Locatii secundare ?
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Viteza in Mbps:</label>
+          <input type="text" class="form-control" id="tput_br" placeholder="Enter number">
+
+        </div>
+      </div>
       <div class="media text-muted pt-3">
         <div class="row" style="margin-left:10px">
           <p class="media-body border-gray">
@@ -236,39 +188,12 @@
       <div class="media text-muted pt-3">
         <div class="row" style="margin-left:10px">
           <p class="media-body border-gray">
-            Numar telefoane fixe IP ?
-          </p>
-        </div>
-        <div class="row" style="margin-left:35px">
-
-          <input type="text" class="form-control" id="br_phone" placeholder="Enter number">
-
-        </div>
-      </div>
-      <div class="media text-muted pt-3">
-        <div class="row" style="margin-left:10px">
-          <p class="media-body border-gray">
             Numar Porturi LAN(PC-uri/Laptopuri/ Periferice/ camere IP conectate) ?
           </p>
         </div>
         <div class="row" style="margin-left:35px">
 
           <input type="text" class="form-control" id="br_ports" placeholder="Enter number">
-
-        </div>
-      </div>
-      <div class="media text-muted pt-3">
-        <div class="row" style="margin-left:10px">
-          <p class="media-body border-gray">
-            Conexiuni cloud Azure
-          </p>
-        </div>
-        <div class="row" style="margin-left:35px">
-          <label for="forHQ">Da/Nu:</label>
-          <select class="form-control" id="br_azure">
-            <option>Da</option>
-            <option>Nu</option>
-          </select>
 
         </div>
       </div>
@@ -300,24 +225,23 @@
         </div>
       </div>
 
-      <div class="media text-muted pt-3">
-        <div class="row" style="margin-left:10px">
-          <p class="media-body border-gray">
-            Numar sali de conferinta ?
-          </p>
-        </div>
-        <div class="row" style="margin-left:35px">
-          <label for="forHQ">Mari (mai mult de 10 persoane)</label>
-          <input type="text" class="form-control" id="br_conf_big" placeholder="Enter number">
-          <label for="forBranch">Mici (mai putin de 10 persoane)</label>
-          <input type="text" class="form-control" id="br_conf_small" placeholder="Enter number">
-        </div>
-      </div>
+     
     </div>
 
 
     <div class="my-3 p-3 bg-white rounded box-shadow">
       <h6 class="border-bottom border-gray pb-2 mb-0">Informatii specifice depozite</h6>
+      <div class="media text-muted pt-3">
+        <div class="row" style="margin-left:10px">
+          <p class="media-body border-gray">
+            Viteza garantata internet depozite ?
+          </p>
+        </div>
+        <div class="row" style="margin-left:35px">
+          <label for="forHQ">Viteza in Mbps:</label>
+          <input type="text" class="form-control" id="tput_dep" placeholder="Enter number">
+        </div>
+      </div>
       <div class="media text-muted pt-3">
         <div class="row" style="margin-left:10px">
           <p class="media-body border-gray">
@@ -340,19 +264,6 @@
         <div class="row" style="margin-left:35px">
           <label for="forHQ">Suprafata in mp:</label>
           <input type="text" class="form-control" id="dep_ap_ext" placeholder="Enter number">
-
-        </div>
-      </div>
-
-      <div class="media text-muted pt-3">
-        <div class="row" style="margin-left:10px">
-          <p class="media-body border-gray">
-            Numar telefoane fixe IP ?
-          </p>
-        </div>
-        <div class="row" style="margin-left:35px">
-
-          <input type="text" class="form-control" id="dep_phone" placeholder="Enter number">
 
         </div>
       </div>
@@ -412,37 +323,38 @@
         datum = {
             "hq_locations": $('#HQ_locations').val(),
             "br_locations": $('#Branch_locations').val(),
+            "dep_locations": $('#dep_locations').val(),
             "tput_hq": $('#tput_hq').val(),
             "tput_br": $('#tput_br').val(),
+            "tput_dep": $('#tput_dep').val(),
             "4g_locations": $('#4g_locations').val(),
-            "bck_hq": $('#bck_hq').val(),
-            "bck_br": $('#bck_br').val(),
+            // "bck_hq": $('#bck_hq').val(),
+            // "bck_br": $('#bck_br').val(),
 
             "hq_ap": $('#hq_ap').val(),
-            "hq_phone": $('#hq_phone').val(),
+            // "hq_phone": $('#hq_phone').val(),
             "hq_ports": $('#hq_ports').val(),
             "hq_azure": $('#hq_azure').val(),
             "hq_cam_int": $('#hq_cam_int').val(),
             "hq_cam_ext": $('#hq_cam_ext').val(),
             "hq_senz_temp": $('#hq_senz_temp').val(),
             "hq_senz_hum": $('#hq_senz_hum').val(),
-            "hq_conf_big": $('#hq_conf_big').val(),
-            "hq_conf_small": $('#hq_conf_small').val(),
+            // "hq_conf_big": $('#hq_conf_big').val(),
+            // "hq_conf_small": $('#hq_conf_small').val(),
 
             "br_ap": $('#br_ap').val(),
-            "br_phone": $('#br_phone').val(),
+            // "br_phone": $('#br_phone').val(),
             "br_ports": $('#br_ports').val(),
-            "br_azure": $('#br_azure').val(),
             "br_cam_int": $('#br_cam_int').val(),
             "br_cam_ext": $('#br_cam_ext').val(),
             "br_senz_temp": $('#br_senz_temp').val(),
             "br_senz_hum": $('#br_senz_hum').val(),
-            "br_conf_big": $('#br_conf_big').val(),
-            "br_conf_small": $('#br_conf_small').val(),
+            // "br_conf_big": $('#br_conf_big').val(),
+            // "br_conf_small": $('#br_conf_small').val(),
 
             "dep_ap_int": $('#dep_ap_int').val(),
             "dep_ap_ext": $('#dep_ap_ext').val(),
-            "dep_phone": $('#dep_phone').val(),
+            // "dep_phone": $('#dep_phone').val(),
             "dep_ports": $('#dep_ports').val(),
             "dep_cam_int": $('#dep_cam_int').val(),
             "dep_cam_ext": $('#dep_cam_ext').val(),
@@ -455,6 +367,7 @@
           url: "/generate_bom",
           data: datum,
           success: function (result) {
+            alert('ok');
             window.open("/bom", '_blank');
           },
           error: function (result) {
